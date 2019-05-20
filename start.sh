@@ -6,6 +6,8 @@ cat <<End-of-message > /etc/rsyslog.conf
 *.*;auth,authpriv.none /dev/stdout
 End-of-message
 
+rm -f /var/run/rsyslogd.pid
+
 BACKGROUND_TASKS=()
 
 /usr/sbin/rsyslogd -n &
