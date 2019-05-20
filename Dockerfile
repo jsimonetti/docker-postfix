@@ -1,5 +1,5 @@
 FROM jsimonetti/alpine-edge
 
-RUN	apk add --no-cache postfix
-
-CMD	[ "/usr/sbin/postfix", "start-fg" ]
+RUN	apk add --no-cache bash postfix rsyslog
+ADD start.sh /start.sh
+CMD	[ "/start.sh" ]
