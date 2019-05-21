@@ -7,6 +7,10 @@ cat <<End-of-message > /etc/rsyslog.conf
 End-of-message
 
 rm -f /var/run/rsyslogd.pid
+chown -R postfix:postfix /var/lib/postfix
+chown -R postfix:root /var/spool/postfix/{active,bounce,corrupt,defer,deferred,flush,hold,incoming,private,saved,trace}
+chown -R postfix:postdrop /var/spool/postfix/{maildrop,public}
+chown -R root:postfix /var/spool/postfix/pid
 
 BACKGROUND_TASKS=()
 
