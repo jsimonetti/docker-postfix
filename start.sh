@@ -18,8 +18,9 @@ BACKGROUND_TASKS=()
 RSYSLOG=$!
 BACKGROUND_TASKS+=($RSYSLOG)
 
-/usr/lib/postfix/sbin/master &
-POSTFIX=$!
+/etc/init.d/postfix start
+#/usr/lib/postfix/sbin/master &
+POSTFIX=`ps ux | awk '/postfix/ && !/awk/ {print $2}'`
 BACKGROUND_TASKS+=($POSTFIX)
 
 while true; do
