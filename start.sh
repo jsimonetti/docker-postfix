@@ -14,7 +14,7 @@ BACKGROUND_TASKS=()
 RSYSLOG=$!
 BACKGROUND_TASKS+=($RSYSLOG)
 
-/usr/libexec/postfix/master &
+/usr/lib/postfix/sbin/master &
 POSTFIX=$!
 BACKGROUND_TASKS+=($POSTFIX)
 
