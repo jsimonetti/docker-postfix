@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.13.1
 
 RUN	apk add --no-cache bash postfix rsyslog 
 ADD start.sh /start.sh
